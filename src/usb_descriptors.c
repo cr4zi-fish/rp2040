@@ -75,17 +75,23 @@ uint8_t const *tud_descriptor_device_cb(void)
 //--------------------------------------------------------------------+
 // Configuration Descriptor
 //--------------------------------------------------------------------+
-#define CONFIG_TOTAL_LEN (TUD_CONFIG_DESC_LEN + CFG_TUD_AUDIO * TUD_AUDIO_DAC_AMP_STEREO_DESC_LEN)
+#define CONFIG_TOTAL_LEN (TUD_CONFIG_DESC_LEN + CFG_TUD_AUDIO * TUD_AUDIO_DAC_AMP_STEREO_DESC_LEN + TUD_CDC_DESC_LEN)
 
 #define EPNUM_AUDIO_OUT 0x01
+#define EPNUM_CDC_NOTIF 0x82
+#define EPNUM_CDC_OUT   0x03
+#define EPNUM_CDC_IN    0x81
 
 uint8_t const desc_configuration[] =
 {
     // Interface count, string index, total length, attribute, power in mA
     TUD_CONFIG_DESCRIPTOR(1, ITF_NUM_TOTAL, 0, CONFIG_TOTAL_LEN, 0x00, 100),
 
-    // Interface number, string index, EP Out & EP In address, EP size
-    TUD_AUDIO_DAC_AMP_STEREO_DESCRIPTOR(2, EPNUM_AUDIO_OUT, EPNUM_AUDIO_IN | 0x80)
+    // Audio interfaces
+    TUD_AUDIO_DAC_AMP_STEREO_DESCRIPTOR(2, EPNUM_AUDIO_OUT, 0),
+
+    // CDC interface
+    TUD_CDC_DESCRIPTOR(ITF_NUM_CDC_COMM, 0, EPNUM_CDC_NOTIF, 8, EPNUM_CDC_OUT, EPNUM_CDC_IN, 64)
 };
 
 // Invoked when received GET CONFIGURATION DESCRIPTOR

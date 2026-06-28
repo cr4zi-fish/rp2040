@@ -1,0 +1,14 @@
+# Target labels
+ picotoolBuild
+# Source files and their labels
+/workspaces/rp2040/src/build/CMakeFiles/picotoolBuild
+/workspaces/rp2040/src/build/CMakeFiles/picotoolBuild.rule
+/workspaces/rp2040/src/build/CMakeFiles/picotoolBuild-complete.rule
+/workspaces/rp2040/src/build/picotool/src/picotoolBuild-stamp/picotoolBuild-build.rule
+/workspaces/rp2040/src/build/picotool/src/picotoolBuild-stamp/picotoolBuild-configure.rule
+/workspaces/rp2040/src/build/picotool/src/picotoolBuild-stamp/picotoolBuild-download.rule
+/workspaces/rp2040/src/build/picotool/src/picotoolBuild-stamp/picotoolBuild-install.rule
+/workspaces/rp2040/src/build/picotool/src/picotoolBuild-stamp/picotoolBuild-mkdir.rule
+/workspaces/rp2040/src/build/picotool/src/picotoolBuild-stamp/picotoolBuild-patch.rule
+/workspaces/rp2040/src/build/picotool/src/picotoolBuild-stamp/picotoolBuild-test.rule
+/workspaces/rp2040/src/build/picotool/src/picotoolBuild-stamp/picotoolBuild-update.rule

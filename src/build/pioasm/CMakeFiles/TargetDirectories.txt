@@ -1,0 +1,7 @@
+/workspaces/rp2040/src/build/pioasm/CMakeFiles/pioasm.dir
+/workspaces/rp2040/src/build/pioasm/CMakeFiles/edit_cache.dir
+/workspaces/rp2040/src/build/pioasm/CMakeFiles/rebuild_cache.dir
+/workspaces/rp2040/src/build/pioasm/CMakeFiles/list_install_components.dir
+/workspaces/rp2040/src/build/pioasm/CMakeFiles/install.dir
+/workspaces/rp2040/src/build/pioasm/CMakeFiles/install/local.dir
+/workspaces/rp2040/src/build/pioasm/CMakeFiles/install/strip.dir

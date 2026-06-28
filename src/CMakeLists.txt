@@ -18,6 +18,9 @@ add_executable(rp2040_dac_amp
     main.c
     usb_descriptors.c
     dacamp.c
+    dacamp_volume.c
+    eq.c
+    terminal.c
 )
 
 pico_generate_pio_header(rp2040_dac_amp ${CMAKE_CURRENT_LIST_DIR}/hbridge.pio)

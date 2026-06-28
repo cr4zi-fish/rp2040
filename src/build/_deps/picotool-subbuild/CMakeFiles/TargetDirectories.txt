@@ -1,0 +1,3 @@
+/workspaces/rp2040/src/build/_deps/picotool-subbuild/CMakeFiles/picotool-populate.dir
+/workspaces/rp2040/src/build/_deps/picotool-subbuild/CMakeFiles/edit_cache.dir
+/workspaces/rp2040/src/build/_deps/picotool-subbuild/CMakeFiles/rebuild_cache.dir

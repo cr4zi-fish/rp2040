@@ -1,0 +1,2 @@
+/workspaces/rp2040/src/build/_deps/picotool-build/enc_bootloader/CMakeFiles/edit_cache.dir
+/workspaces/rp2040/src/build/_deps/picotool-build/enc_bootloader/CMakeFiles/rebuild_cache.dir

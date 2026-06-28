@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdbool.h>
 #include <stdint.h>
 
 #define DACAMP_VOLUME_STEP_BITS 7
@@ -7,8 +8,12 @@
 #define DACAMP_MIN_VOLUME_DB (-50)
 #define DACAMP_VOLUME_PER_DB_UAC2 256 
 #define DACAMP_MIN_VOLUME_UAC2 (DACAMP_MIN_VOLUME_DB * DACAMP_VOLUME_PER_DB_UAC2)
+#define DACAMP_VOLUME_CTRL_100_DB (25600)
 
 void dacamp_init(void);
+
+void dacamp_set_volume(int percent);
+void dacamp_get_volume(int16_t volume[3], int8_t mute[3]);
 
 void dacamp_start(uint32_t sampleRate);
 
@@ -17,6 +22,13 @@ void dacamp_change_sample_rate(uint32_t sampleRate);
 void dacamp_stop(void);
 
 void dacamp_flush(void);
+
+void dacamp_set_mute(bool mute);
+void dacamp_adjust_volume(int delta_percent);
+int dacamp_get_volume_percent(void);
+bool dacamp_is_muted(void);
+uint32_t dacamp_get_current_sample_rate(void);
+bool dacamp_is_enabled(void);
 
 void dacamp_debug_stuff_task(void);
 

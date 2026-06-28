@@ -34,6 +34,8 @@
 #include "pico/stdlib.h"
 
 #include "dacamp.h"
+#include "eq.h"
+#include "terminal.h"
 #include "hardware/watchdog.h"
 
 // List of supported sample rates
@@ -101,12 +103,15 @@ void audio_task(void);
 int main(void)
 {
     dacamp_init();
-    
+    eq_init(currentSampleRate);
+    terminal_init();
+
     board_init();
 
     // init device stack on configured roothub port
     tud_init(BOARD_TUD_RHPORT);
 
+    terminal_print_prompt();
     TU_LOG1("Headset running\r\n");
 
     if (watchdog_caused_reboot())
@@ -117,6 +122,7 @@ int main(void)
     while (1)
     {
         tud_task(); // TinyUSB device task
+        terminal_task();
         audio_task();
         led_blinking_task();
     }

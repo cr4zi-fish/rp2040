@@ -1,0 +1,5 @@
+/workspaces/rp2040/src/build/pioasm-install/pioasm/pioasm
+/workspaces/rp2040/src/build/pioasm-install/pioasm/pioasmTargets.cmake
+/workspaces/rp2040/src/build/pioasm-install/pioasm/pioasmTargets-release.cmake
+/workspaces/rp2040/src/build/pioasm-install/pioasm/pioasmConfig.cmake
+/workspaces/rp2040/src/build/pioasm-install/pioasm/pioasmConfigVersion.cmake

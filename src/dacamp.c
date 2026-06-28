@@ -6,10 +6,12 @@
 #include "pico/multicore.h"
 #include "pico/sync.h"
 #include "pico/platform.h"
+#include "hardware/clocks.h"
 #include "hardware/watchdog.h"
 
 #include "ringbuf.h"
 #include "dsm.h"
+#include "eq.h"
 #include "volumeLut.h"
 #include "roscRandom.h"
 
@@ -69,6 +71,16 @@
 static volatile bool isEnabledRequested = false, isFlushRequested = false;
 static volatile uint32_t requestedSampleRate;
 
+uint32_t dacamp_get_current_sample_rate(void)
+{
+    return requestedSampleRate;
+}
+
+bool dacamp_is_enabled(void)
+{
+    return isEnabledRequested;
+}
+
 static uint64_t pcmRingInternalBuffer[PCM_RING_BUFFER_DEPTH];
 static ringbuf_t pcmRing;
 
@@ -123,6 +135,7 @@ void dacamp_start(uint32_t sampleRate)
 void dacamp_change_sample_rate(uint32_t sampleRate)
 {
     requestedSampleRate = sampleRate;
+    eq_set_sample_rate(sampleRate);
     dacamp_flush();
 }
 
@@ -210,6 +223,7 @@ int dacamp_pcm_put(const uint32_t* samples, int sampleCount, int sampleSize, con
             else
                 sampleRight = 0;
 
+            eq_process_sample(&sampleLeft, &sampleRight);
             pcmToDsmPcmBuffer[i] = _DACAMP_DSM_PCM(sampleLeft, sampleRight);
         }
 

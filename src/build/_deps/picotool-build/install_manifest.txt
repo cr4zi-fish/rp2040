@@ -1,0 +1,7 @@
+/workspaces/rp2040/src/build/_deps/picotool/picotool
+/workspaces/rp2040/src/build/_deps/picotool/picotoolTargets.cmake
+/workspaces/rp2040/src/build/_deps/picotool/picotoolTargets-release.cmake
+/workspaces/rp2040/src/build/_deps/picotool/picotoolConfig.cmake
+/workspaces/rp2040/src/build/_deps/picotool/picotoolConfigVersion.cmake
+/workspaces/rp2040/src/build/_deps/picotool/enc_bootloader.elf
+/workspaces/rp2040/src/build/_deps/picotool/enc_bootloader_mbedtls.elf
